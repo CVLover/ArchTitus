@@ -32,11 +32,11 @@ fi
 echo "-------------------------------------------------"
 echo "       Setup Language to NO and set locale       "
 echo "-------------------------------------------------"
-sed -i 's/^#nb_NO.utf8 UTF-8/nb_NO.utf8 UTF-8/' /etc/locale.gen
+sed -i 's/^#nb_NO.UTF8 UTF-8/nb_NO.UTF8 UTF-8/' /etc/locale.gen
 locale-gen
 timedatectl --no-ask-password set-timezone Europe/Oslo
 timedatectl --no-ask-password set-ntp 1
-localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_TIME="nb_NO.utf8"
+localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_TIME="nb_NO.UTF8"
 
 # Set keymaps
 localectl --no-ask-password set-keymap nb_NO
@@ -101,6 +101,7 @@ PKGS=(
 'extra-cmake-modules'
 'vlc'
 'filelight'
+'timeshift'
 'flex'
 'plex'
 'fuse2'
