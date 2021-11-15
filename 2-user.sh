@@ -29,6 +29,9 @@ PKGS=(
 'dxvk-bin' # DXVK DirectX to Vulcan
 'github-desktop-bin' # Github Desktop sync
 'lightly-git'
+'cpupower'
+'cpupower-gui'
+'bpytop'
 'lightlyshaders-git'
 'mangohud' # Gaming FPS Counter
 'mangohud-common'
