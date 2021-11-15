@@ -142,8 +142,6 @@ PKGS=(
 'libdvdcss'
 'libnewt'
 'libtool'
-'cpupower'
-'cpupower-gui'
 'linux'
 'linux-firmware'
 'linux-headers'
