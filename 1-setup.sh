@@ -36,7 +36,7 @@ sed -i 's/^#nb_NO.UTF-8 UTF-8/nb_NO.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 timedatectl --no-ask-password set-timezone Europe/Oslo
 timedatectl --no-ask-password set-ntp 1
-localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_TIME="nb_NO.UTF-8 UTF-8"
+localectl --no-ask-password set-locale LANG="nb_NO.UTF-8" LC_TIME="nb_NO.UTF-8"
 
 
 
@@ -147,10 +147,6 @@ PKGS=(
 'linux'
 'linux-firmware'
 'linux-headers'
-'linux-rt'
-'linux-rt-firmware'
-'linux-rt-headers'
-'nvidia-rt'
 'lsof'
 'lutris'
 'lzop'
