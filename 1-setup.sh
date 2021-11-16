@@ -48,6 +48,8 @@ sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /et
 
 #Add parallel downloading
 sed -i 's/^#Para/Para/' /etc/pacman.conf
+sed -i 's/^#ILoveCandy/ILoveCandy/' /etc/pacman.conf
+sed -i 's/^#Color/Color/' /etc/pacman.conf
 
 #Enable multilib
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
