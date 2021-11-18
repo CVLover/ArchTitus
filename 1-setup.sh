@@ -38,7 +38,7 @@ echo "-------------------------------------------------"
 sh -c "echo -e 'LANG=nb_NO.UTF-8\nLC_ALL=nb_NO.UTF-8' > /etc/default/locale"
 sed -i 's/^#nb_NO.UTF-8 UTF-8/nb_NO.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
-timedatectl --no-ask-password set-timezone Europe/Oslo
+timedatectl --no-ask-password set-timezone 'Europe/Oslo'
 timedatectl --no-ask-password set-ntp 1
 localectl --no-ask-password set-locale LANG="nb_NO.UTF-8" LC_TIME="nb_NO.UTF-8"
 
