@@ -10,6 +10,9 @@
 echo "--------------------------------------"
 echo "--          Network Setup           --"
 echo "--------------------------------------"
+sed -i 's/^#Para/Para/' /etc/pacman.conf
+sed -i 's/^#ILoveCandy/ILoveCandy/' /etc/pacman.conf
+sed -i 's/^#Color/Color/' /etc/pacman.conf
 pacman -S networkmanager dhclient --noconfirm --needed
 systemctl enable --now NetworkManager
 echo "-------------------------------------------------"
@@ -32,11 +35,14 @@ fi
 echo "-------------------------------------------------"
 echo "       Setup Language to NO and set locale       "
 echo "-------------------------------------------------"
+sh -c "echo -e 'LANG=nb_NO.UTF-8\nLC_ALL=nb_NO.UTF-8' > /etc/default/locale"
+locale-gen
 sed -i 's/^#nb_NO.UTF-8 UTF-8/nb_NO.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 timedatectl --no-ask-password set-timezone Europe/Oslo
 timedatectl --no-ask-password set-ntp 1
 localectl --no-ask-password set-locale LANG="nb_NO.UTF-8" LC_TIME="nb_NO.UTF-8"
+locale-gen
 
 
 
@@ -49,7 +55,7 @@ sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /et
 #Add parallel downloading
 sed -i 's/^#Para/Para/' /etc/pacman.conf
 sed -i 's/^#ILoveCandy/ILoveCandy/' /etc/pacman.conf
-sed -i 's/^#Color/Color/' /etc/pacman.conf
+sed -i 's/^Color/' /etc/pacman.conf
 
 #Enable multilib
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
@@ -239,7 +245,7 @@ esac
 
 # Graphics Drivers find and install
 if lspci | grep -E "NVIDIA|GeForce"; then
-    pacman -S nvidia --noconfirm --needed
+    pacman -S nvidia --noconfirm --needed nvidia-settings
 	nvidia-xconfig
 elif lspci | grep -E "Radeon"; then
     pacman -S xf86-video-amdgpu --noconfirm --needed
