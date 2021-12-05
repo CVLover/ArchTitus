@@ -23,8 +23,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerleve
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc
 
 PKGS=(
-'audacity'
-'google-chrome'
 'autojump'
 'awesome-terminal-fonts'
 'brave-bin' # Brave Browser
@@ -54,16 +52,6 @@ PKGS=(
 'ttf-roboto'
 'zoom' # video conferences
 'snap-pac'
-'noto-fonts'
-'noto-fonts-cjk'
-'ttf-dejavu'
-'ttf-liberation'
-'ttf-opensans'
-'freetype2-cleartype'
-'otf-san-francisco-pro'
-'libappindicator-gtk3'
-'appmenu-gtk-module'
-'xdg-desktop-portal'
 )
 
 for PKG in "${PKGS[@]}"; do
